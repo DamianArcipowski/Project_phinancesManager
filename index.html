@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phinances Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/958b0131c3.js" crossorigin="anonymous"></script>
+    <script src="script.js" async></script>
+</head>
+<body>
+
+    <div class="header">
+        <h1><i class="fa-solid fa-wallet"></i> Wallet</h1>
+        <p>Twój osobisty menedżer finansów</p>
+    </div>
+    <div class="wrapper">
+        <div class="transactions">
+            <p>Lista transakcji</p>
+            <div class="income">
+                <p>Przychód:</p>
+            </div>
+            <div class="expense">
+                <p>Wydatki:</p>
+            </div>
+        </div>
+        <div class="saldo">
+            <p>Dostępne środki</p>
+            <span id="cash">0zł</span>
+            <div class="buttons">
+                <button id="add" class="saldoBtn"><i class="fa-solid fa-plus"></i> Dodaj transakcję</button>
+                <button id="deleteAll" class="saldoBtn"><i class="fa-solid fa-trash"></i> Usuń wszystkie</button>
+            </div>
+            <p>Wybierz styl:</p>
+            <div class="themes">
+                <div class="light"></div>
+                <div class="dark"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modalContainer">
+        <div class="modal">
+            <h1>Dodaj nową transakcję</h1>
+            <p class="title">Nazwa:</p>
+            <p class="description">(podaj nazwę transakcji)</p>
+            <input id="transTitle" type="text">
+            <p class="title">Kwota:</p>
+            <p class="description">(podaj kwotę transakcji, jeśli dodajesz wydatek, postaw znak minusa na początku kwoty)</p>
+            <input id="amount" type="number">
+            <p class="title">Wybierz kategorię:</p>
+            <p class="description">([+] oznacza przychód, [-] oznacza wydatek)</p>
+            <select id="categories">
+                <option value="null" selected disabled></option>
+                <option value="Przychód">[+] Przychód</option>
+                <option value="Zakupy">[-] Zakupy</option>
+                <option value="Jedzenie">[-] Jedzenie</option>
+                <option value="Kino">[-] Kino</option>
+            </select>
+            <div class="modalbtns">
+                <button id="save" class="modalBtn"><i class="fa-solid fa-floppy-disk"></i> Zapisz</button>
+                <button id="cancel" class="modalBtn"><i class="fa-solid fa-xmark"></i> Anuluj</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

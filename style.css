@@ -1,0 +1,271 @@
+:root{
+    --bgc: #fff;
+    --fontcolor: #000;
+    --btnfont: #000;
+    --borderdark: 1px solid #000;
+    --bgcbtnhover: #000;
+    --colorbtnhover: #fff;
+    --transactcolor: #000;
+    --xcolor: #000;
+    --transactborder: 1px solid #000;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--bgc);
+    color: var(--fontcolor);
+}
+
+.header{
+    width: 100%;
+    text-align: center;
+    margin: 3rem;
+}
+
+.header h1{
+    font-size: 4.5rem;
+    font-weight: 100;
+}
+
+.header p{
+    font-size: 2rem;
+    margin-top: -0.5rem;
+}
+
+.wrapper{
+    margin-top: 2%;
+    display: flex;
+    height: auto;
+    width: fit-content;
+}
+
+.transactions{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: start;
+    text-align: center;
+    max-height: 25%;
+}
+
+.saldo{
+    width: 50%;
+    border: 1px solid gray;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 300px;
+    padding: 4rem 0 4rem 0;
+}
+
+.transactions>p{
+    width: 100%;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.income, .expense{
+    border: 1px solid gray;
+    border-radius: 2px;
+    width: 270px;
+    min-height: 60px;
+    font-weight: bold;
+}
+
+.income>p{
+    font-size: 1.5rem;
+    color: rgb(93, 189, 97);
+    margin: 1rem;
+}
+
+.expense>p{
+    font-size: 1.5rem;
+    color: rgb(241, 77, 77);
+    margin: 1rem;
+}
+
+.saldo>p{
+    font-size: 2.3rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#cash{
+    width: 100%;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 100;
+    margin: 2rem 0 2rem 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.saldoBtn{
+    background: none;
+    border-radius: 2px;
+    border: 1px solid gray;
+    padding: .8rem 1.5rem;
+    font-size: 1.3rem;
+    color: var(--btnfont);
+}
+
+.themes{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.themes:hover{
+    cursor: pointer;
+}
+
+.light, .dark{
+    border: 1px solid black;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100px;
+    margin: 1.5rem;
+}
+
+.light{
+    background-color: #fff;
+}
+
+.dark{
+    background-color: #000;
+    border: var(--borderdark);
+}
+
+.saldoBtn:hover{
+    cursor: pointer;
+    background-color: var(--bgcbtnhover);
+    color: var(--colorbtnhover);
+    transition: all .6s;
+}
+
+.modalContainer{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(140deg, #244176, #3E286C);
+    color: white;
+}
+
+.modal{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: 70%;
+}
+
+.modal h1{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.title{
+    margin-top: 3rem;
+    font-size: 2.3rem;
+}
+
+.description{
+    margin-bottom: .8rem;
+    font-size: 1.1rem;
+}
+
+.modalBtn{
+    margin-top: 3rem;
+}
+
+.modal input, .modal select{
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    height: 3rem;
+    border-radius: .4rem;
+    text-indent: 1rem;
+}
+
+.modal select{
+    font-size: 1.4rem;
+}
+
+.modalBtn{
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: .3rem;
+    padding: 9px 25px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 1.6rem;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+}
+
+.modalBtn:hover{
+    background-color: #4E509B;
+    transition: all .6s;
+}
+
+.incTransactName, .expTransactName{
+    color: var(--transactcolor);
+    text-align: left;
+    border-bottom: var(--transactborder);
+    padding-bottom: 0.7rem;
+}
+
+.incTransactValue, .expTransactValue{
+    text-align: right;
+    border-bottom: var(--transactborder);
+}
+
+.incTransactName, .incTransactValue, .expTransactName, .expTransactValue{
+    width: 50%;
+}
+
+.incomeTransact, .expenseTransact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+.fa-xmark:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.xcolor{
+    color: var(--xcolor);
+}
